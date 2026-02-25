@@ -24,7 +24,7 @@
 % Using tables like the profile section
 \RequirePackage{tabularx}
 % Used for the link symbol
-\RequirePackage{fontawesome}
+\RequirePackage{fontawesome5}
 % Set up font 
 \RequirePackage{lato-font}
 \RequirePackage{raleway-font}
@@ -122,7 +122,7 @@
 % Project command
 \newcommand{\Project}[2]{
 \runsubsection{%
-\href{#2}{\uppercase{#1} \,\faExternalLink}
+\href{#2}{\uppercase{#1} \,\faExternalLink*}
 }
     \hfill
 }
