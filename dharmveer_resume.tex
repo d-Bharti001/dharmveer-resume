@@ -28,6 +28,9 @@
 
 % Parameters: courses
 \newcommand{\teacherAssistant}[1]{\textbf{Teacher Assistant (TA):} #1}
+
+% Parameters: web-link
+\newcommand{\weblink}[2]{\href{#2}{\underline{#1}}}
  
 %--------------------------------------------------------------
 \begin{document}
@@ -61,8 +64,8 @@
 \begin{center}
     \Huge \scshape \latoRegular{\yourName} \\ \vspace{1pt}
     \small \href{mailto:\yourEmail}{\underline{\yourEmail}} $|$  \yourPhone $|$ 
-    \href{https://www.linkedin.com/in/\linkedInUserName}{\underline{linkedIn/\linkedInUserName}} $|$
-    \href{https://github.com/\githubUserName}{\underline{github/\githubUserName}} 
+    \weblink{linkedin.com/in/\linkedInUserName}{https://www.linkedin.com/in/\linkedInUserName} $|$
+    \weblink{github.com/\githubUserName}{https://github.com/\githubUserName}
     % $|$ \href{\yourWebsiteLink}{\underline{\yourWebsite}}
 \end{center}
 
@@ -73,13 +76,11 @@
 
 \resumeHeading{LCX}{Software Development Engineer}{Gurugram, IN}{August 2022 - Present}
 \begin{bullets}
-    \item Responsible for maintaining the entire backend architecture for \href{https://app.tiamonds.com}{\underline{Tiamonds}}, including the \textbf{NodeJS} server codebase, \textbf{smart contracts} for blockchains, and \textbf{API integration}
-    \item Independently conducted \textbf{technical research} to evaluate and integrate support for new blockchains, protocols, and feature enhancements, ensuring architectural alignment and production readiness
-    \item Implemented an \textbf{off-chain transaction mechanism} using \textbf{EIP-712 server-signed messages}, significantly reducing gas consumption and improving the efficiency of \textbf{ERC-721} NFT sales on \textbf{Ethereum}
-    \item Refactored the Ethereum blockchain synchronization logic to minimize blockchain calls and to ensure \textbf{complete event capture and updates}, improving reliability
+    \item Conducting research and deployment of layer 2 EVM chain
+    \item Designed \weblink{LCX Token 2.0 smart contract}{https://etherscan.io/token/0x8CD41041505885EF0aD3858181D66f17BE8aae7E}
+    \item Maintained the entire backend of \weblink{Tiamonds}{https://app.tiamonds.com} - now TotoFinance (NFT Marketplace), including the \textbf{NodeJS} server codebase, Ethereum smart contracts, and Cardano NFTs
+    \item Conducted technical research and integrated gas efficient operations on Ethereum using \weblink{server signed messages}{https://medium.com/@dharmveerbharti/server-signed-messages-in-web3-offloading-on-chain-workload-to-off-chain-518bf9bd364b}
     \item Built a robust \textbf{Python} automation script using \textbf{Numpy} and \textbf{Pandas} to manage an inventory of 10,000+ assets in \textbf{MongoDB} by periodically syncing with ~80,000 CSV records, with automatic preparation of asset images by \textbf{adding text and graphical overlays} to images using \textbf{Pillow} library and uploading them to \textbf{AWS S3} -- all automated
-    \item Integrated \textbf{Cardano} support alongside Ethereum by enabling primary sales on ADA and implementing the \textbf{CIP-25} NFT standard
-    \item Enhanced \textbf{backend logging, monitoring, and alerting} systems to improve observability
 \end{bullets}
 
 \sectionsep
@@ -99,11 +100,11 @@
 %--------------------------------------------------------------
 \section{Skills}
 \begin{skillList}
-    \singleItem{Languages:}{JavaScript, TypeScript, Solidity, Python, NoSQL}
+    Golang, Solidity, SQL, NoSQL, JavaScript, TypeScript, Python
     \\
-    \singleItem{Tools \& Technologies:}{Git, NodeJS, MongoDB, Redis, Ethereum Smart Contracts, ReactJS}
+    PostgreSQL, MongoDB, Redis, NodeJS
     \\
-    \singleItem{Web3 Tools and Standards:}{web3.js, ethers.js, Truffle, Hardhat, ERC-20, ERC-721, EIP-712, CIP-25}
+    Git, SSH, Systemd services, PM2, Docker, Nginx
 \end{skillList}
 
 % A more concise alternate 
@@ -151,10 +152,23 @@
 
 \sectionsep
 
-\projectHeading{Tic Tac Toe Bolt}{https://d-bharti001.github.io/tic-tac-toe-bolt/}{Typescript, Low-level System Design, ReactJS}
+\projectHeading{OP Stack Withdrawals Indexer}{https://github.com/d-Bharti001/op-withdrawals-indexer}{Golang, Optimism Stack, Blockchain, CLI}
 \begin{bullets}
-    \item An extension of the classic Tic-Tac-Toe, comprising an additional rule, where each player can have only 3 active symbols on the board; oldest moves are automatically reverted to maintain the limit. User plays against AI.
-    \item Codebase (\href{https://github.com/d-Bharti001/tic-tac-toe-bolt}{\underline{link}}): Core game components are developed separately, independent of the UI components. Factory pattern is used in the core components, making them easily extensible.
+    \item Golang CLI app to record withdrawal initiation, proving, and finalization events related to an OP Stack chain.
+    \item Two services - \textbf{Indexer} and \textbf{API} - with a shared database, for easy horizontal scalability.
+    \item Interfaces are used for decoupling the application logic from blockchain and database implementations.
+    \item Reliable polling based event indexing logic with retries, along with safe database queries preventing duplicate inserts, thus ensuring idempotency.
+    \item Graceful shutdown logic implemented in both the services (with timeout) to safely free the resources on exit.
+    \item Corresponding \textbf{ReactJS web interface} for bridging (\weblink{Github link}{https://github.com/d-Bharti001/op-bridge-frontend}) vibe-coded with \textbf{Lovable} and \textbf{Cursor} end-to-end, providing friendly UX for deposits, as well as for the whole withdrawal lifecycle.
+\end{bullets}
+
+\sectionsep
+\sectionsep
+
+\projectHeading{Tic Tac Toe Bolt}{https://d-bharti001.github.io/tic-tac-toe-bolt/}{Typescript, ReactJS, Low-level System Design}
+\begin{bullets}
+    \item An extension of the classic Tic-Tac-Toe, comprising an additional rule, where each player can have only 3 active symbols on the board; oldest moves are automatically reverted to maintain the limit.
+    \item User plays against the computer, whose moves are algorithmically decided (\weblink{AutomatedPlayer.tsx}{https://github.com/d-Bharti001/tic-tac-toe-bolt/blob/main/src/core/AutomatedPlayer.tsx\#L9}).
 \end{bullets}
 
 \sectionsep
@@ -191,22 +205,22 @@
 %--------------------------------------------------------------
 %     Contributions
 %--------------------------------------------------------------
-\section{Community Contributions}
+% \section{Community Contributions}
 
-\begin{itemize}
-    \item Open-Source Contributions, \href{https://meshjs.dev/}{\textbf{\underline{MeshJS}}} [Typescript]
-    \begin{itemize}
-        \item Refactored the whole transaction metadata structure, and other fixes: \href{https://github.com/MeshJS/mesh/pull/416}{\underline{pull/416}}, \href{https://github.com/MeshJS/mesh/pull/396}{\underline{pull/396}}, \href{https://github.com/MeshJS/mesh/issues/345}{\underline{issues/345}}
-        % \item tested and reported a vulnerability with wallet ownership verification functionality \href{https://github.com/MeshJS/mesh/issues/345}{\underline{issues/345}}
-        % \item fixed a bug, enabling the use of any account under a hierarchically deterministic wallet key \href{https://github.com/MeshJS/mesh/pull/396}{\underline{pull/396}}
-        % \item refactored mesh transaction's metadata structure, also fixing a bug leading to lost metadata when building a transaction body \href{https://github.com/MeshJS/mesh/pull/416}{\underline{pull/416}}
-    \end{itemize}
+% \begin{itemize}
+%     \item Open-Source Contributions, \href{https://meshjs.dev/}{\textbf{\underline{MeshJS}}} [Typescript]
+%     \begin{itemize}
+%         \item Refactored the whole transaction metadata structure, and other fixes: \href{https://github.com/MeshJS/mesh/pull/416}{\underline{pull/416}}, \href{https://github.com/MeshJS/mesh/pull/396}{\underline{pull/396}}, \href{https://github.com/MeshJS/mesh/issues/345}{\underline{issues/345}}
+%         % \item tested and reported a vulnerability with wallet ownership verification functionality \href{https://github.com/MeshJS/mesh/issues/345}{\underline{issues/345}}
+%         % \item fixed a bug, enabling the use of any account under a hierarchically deterministic wallet key \href{https://github.com/MeshJS/mesh/pull/396}{\underline{pull/396}}
+%         % \item refactored mesh transaction's metadata structure, also fixing a bug leading to lost metadata when building a transaction body \href{https://github.com/MeshJS/mesh/pull/416}{\underline{pull/416}}
+%     \end{itemize}
 
-    \item Wrote technical articles on Medium explaining the benefits and implementation of off-chain transactions and server-side message signing in Web3: \href{https://medium.com/coinsbench/off-chain-transactions-on-blockchain-introducing-signature-based-workflow-4bb3b5a7e72f}{\underline{Signature Based Workflow}}, \href{https://medium.com/@dharmveerbharti/server-signed-messages-in-web3-offloading-on-chain-workload-to-off-chain-518bf9bd364b}{\underline{Server Signed Messages}}
+%     \item Wrote technical articles on Medium explaining the benefits and implementation of off-chain transactions and server-side message signing in Web3: \href{https://medium.com/coinsbench/off-chain-transactions-on-blockchain-introducing-signature-based-workflow-4bb3b5a7e72f}{\underline{Signature Based Workflow}}, \href{https://medium.com/@dharmveerbharti/server-signed-messages-in-web3-offloading-on-chain-workload-to-off-chain-518bf9bd364b}{\underline{Server Signed Messages}}
 
-    % \item \textbf{Off-chain transactions on blockchain: introducing signature based workflow}: this article describes how off-chain signature based workflow is utilized to save upfront costs with blockchain applications \href{https://medium.com/coinsbench/off-chain-transactions-on-blockchain-introducing-signature-based-workflow-4bb3b5a7e72f}{\underline{Signature Based Workflow}}
+%     % \item \textbf{Off-chain transactions on blockchain: introducing signature based workflow}: this article describes how off-chain signature based workflow is utilized to save upfront costs with blockchain applications \href{https://medium.com/coinsbench/off-chain-transactions-on-blockchain-introducing-signature-based-workflow-4bb3b5a7e72f}{\underline{Signature Based Workflow}}
     
-    % \item \textbf{Server-signed Messages in web3: Offloading On-chain Workload to Off-chain}: this article explains how popular blockchain platforms leverage server-signed messages to minimize on-chain workload while providing a robust validation and security layer \href{https://medium.com/@dharmveerbharti/server-signed-messages-in-web3-offloading-on-chain-workload-to-off-chain-518bf9bd364b}{\underline{Server Signed Messages}}
-\end{itemize}
+%     % \item \textbf{Server-signed Messages in web3: Offloading On-chain Workload to Off-chain}: this article explains how popular blockchain platforms leverage server-signed messages to minimize on-chain workload while providing a robust validation and security layer \href{https://medium.com/@dharmveerbharti/server-signed-messages-in-web3-offloading-on-chain-workload-to-off-chain-518bf9bd364b}{\underline{Server Signed Messages}}
+% \end{itemize}
 
 \end{document}
