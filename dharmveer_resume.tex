@@ -70,17 +70,28 @@
 \end{center}
 
 %--------------------------------------------------------------
+%     Summary
+%--------------------------------------------------------------
+\section{Summary}
+
+Backend engineer focused on reliability and data integrity. \\
+Built and operated backend + data systems in Golang, NodeJS, and Python, with production tooling (Docker, systemd, PM2). \\
+Strong in correctness-first pipelines (validation, deduplication, reconciliation) and designing clear service boundaries.
+
+\sectionsep
+
+%--------------------------------------------------------------
 %     Experience
 %--------------------------------------------------------------
 \section{Work Experience}
 
 \resumeHeading{LCX}{Software Development Engineer}{Gurugram, IN}{Aug 2022 - Feb 2026}
 \begin{bullets}
-    \item Designed \weblink{LCX Token 2.0 smart contract}{https://etherscan.io/token/0x8CD41041505885EF0aD3858181D66f17BE8aae7E} (\textbf{ERC-20}, Upgradeable)
-    \item Conducted research as well as initial deployment of layer 2 EVM chain based on OP Stack, comprising deployment of different Golang based services and smart contracts
-    \item Maintained the entire backend of \weblink{Tiamonds}{https://app.tiamonds.com} - now \weblink{TotoFinance}{https://app.totofinance.co} (NFT Marketplace), including the \textbf{NodeJS} server codebase, Ethereum smart contracts, and \textbf{Cardano NFTs}
-    \item Conducted technical research and integrated gas efficient marketplace operations for \textbf{ERC-721 NFTs} on Ethereum using \weblink{server signed messages}{https://medium.com/@dharmveerbharti/server-signed-messages-in-web3-offloading-on-chain-workload-to-off-chain-518bf9bd364b}
-    \item Built a robust \textbf{Python} automation script using \textbf{Numpy} and \textbf{Pandas} to manage an inventory of 20,000+ assets in \textbf{MongoDB} by periodically syncing with ~80,000 CSV records, with automatic preparation of asset images by adding text and graphical overlays to images using \textbf{Pillow} library and uploading them to \textbf{AWS S3}
+    \item Owned and maintained the backend of \weblink{Tiamonds}{https://app.tiamonds.com} (now \weblink{TotoFinance}{https://app.totofinance.co}), an NFT marketplace, including NodeJS and Python services, staging deployments, and integrations.
+    \item Built correctness-first backend workflows using validation, retries, and idempotent and concurrency-aware operations to keep systems consistent under failures and reprocessing.
+    \item Built a Python automation pipeline (NumPy/Pandas) syncing approximately 80,000 CSV rows into MongoDB for over 20,000 assets with safe retries; generated images with Pillow and uploaded them to AWS S3.
+    \item Implemented server-signed message flows for ERC-721 marketplace operations to reduce on-chain overhead (cut gas costs by approximately 50\%) and enable efficient workflows for new features.
+    \item Designed \weblink{LCX Token 2.0 smart contract}{https://etherscan.io/token/0x8CD41041505885EF0aD3858181D66f17BE8aae7E} (ERC-20, upgradeable, with custom features).
 \end{bullets}
 
 \sectionsep
@@ -100,11 +111,11 @@
 %--------------------------------------------------------------
 \section{Skills}
 \begin{skillList}
-    Golang, Solidity, SQL, NoSQL, gRPC, JavaScript, TypeScript, Python
-    \\
-    PostgreSQL, MongoDB, MySQL, Redis, NodeJS
-    \\
-    Git, SSH, Systemd services, PM2, Docker, Nginx
+    \textbf{Languages:} Go (Golang), Solidity, SQL, JavaScript, TypeScript, Python \\
+    \textbf{Backend:} REST APIs, gRPC, NodeJS \\
+    \textbf{Datastores:} PostgreSQL, MongoDB, MySQL, Redis \\
+    \textbf{Infra:} Docker, Nginx, systemd services, PM2, Git, SSH \\
+    \textbf{Cloud:} DigitalOcean (Droplets), AWS S3
 \end{skillList}
 
 % A more concise alternate 
@@ -150,33 +161,29 @@
 %--------------------------------------------------------------
 \section{Projects}
 
-\sectionsep
-
 \projectHeading{OP Stack Withdrawals Indexer}{https://github.com/d-Bharti001/op-withdrawals-indexer}{Golang, Optimism Stack, Blockchain, PostgreSQL}
 \begin{bullets}
-    \item Golang CLI app to record withdrawal initiation, proving, and finalization events related to an OP Stack chain.
-    \item Two services - \textbf{Indexer} and \textbf{API} - with a shared database, for easy horizontal scalability.
-    \item Interfaces are used for decoupling the application logic from blockchain and database implementations.
-    \item Reliable polling based event indexing logic with retries, along with idempotent SQL queries preventing duplicate inserts, and graceful shutdown logic.
-    \item \textbf{Web interface for OP Sepolia} accessible here: \weblink{https://op-sepolia-bridge.d-bharti.dev}{https://op-sepolia-bridge.d-bharti.dev}. Frontend built with \textbf{Lovable} and \textbf{Cursor}.
+    \item Two services (\textbf{Indexer} + \textbf{API}) with a shared PostgreSQL database, designed for horizontal scalability.
+    \item Failure-safe indexing with retries/backoff, idempotent SQL writes to prevent duplicates, and graceful shutdown.
+    \item Used interfaces to decouple core logic from chain/DB implementations for testability and maintainability.
+    \item \textbf{Live UI}: \weblink{https://op-sepolia-bridge.d-bharti.dev}{https://op-sepolia-bridge.d-bharti.dev} - built with Lovable and Cursor.
 \end{bullets}
 
-\sectionsep
-
-\projectHeading{Tic Tac Toe Bolt}{https://d-bharti001.github.io/tic-tac-toe-bolt/}{Typescript, ReactJS, Low-level System Design}
-\begin{bullets}
-    \item An extension of the classic Tic-Tac-Toe, comprising an additional rule, where each player can have only 3 active symbols on the board; oldest moves are automatically reverted to maintain the limit.
-    \item Playable \weblink{here}{https://d-bharti001.github.io/tic-tac-toe-bolt/}; source code \weblink{here}{https://github.com/d-Bharti001/tic-tac-toe-bolt}
-\end{bullets}
-
-\sectionsep
+\vspace{4pt}
 
 \projectHeading{Go Payment App}{https://github.com/d-Bharti001/go-payment-micro}{Golang, Microservices, MySQL, gRPC}
 \begin{bullets}
-    \item A \textit{sample} microservices based payment processing app (usable at, e.g. a shop)
-    \item Comprises authentication, money movement, email, and ledger (for accounting) services
-    \item Leverages efficient service to service communication using \textbf{gRPC}, and \textbf{Kafka} message broker for asynchronous message flow
-    \item \textbf{Kubernetes} deployment manifests and \textbf{Swagger} UI are provided. See \weblink{README}{https://github.com/d-Bharti001/go-payment-micro/blob/main/README.md}.
+    \item Reference microservices-based payment system with clear service boundaries: auth, money movement, email, and ledger.
+    \item Designed service-to-service communication using \textbf{gRPC} and MySQL-backed workflows.
+    \item Deployed on local \textbf{Kubernetes (Minikube)} using manifests and integrated \textbf{Kafka} for asynchronous messaging workflows.
+\end{bullets}
+
+\vspace{4pt}
+
+\projectHeading{Tic Tac Toe Bolt}{https://d-bharti001.github.io/tic-tac-toe-bolt/}{TypeScript, ReactJS}
+\begin{bullets}
+    \item An extension of the classic Tic-Tac-Toe, with an additional constraint: max 3 active symbols per player.
+    % \item Playable \weblink{here}{https://d-bharti001.github.io/tic-tac-toe-bolt/}; source code \weblink{here}{https://github.com/d-Bharti001/tic-tac-toe-bolt}
 \end{bullets}
 
 % \begin{itemize}
@@ -214,14 +221,7 @@
 \section{Community Contributions}
 
 \begin{itemize}
-    \item Open-Source Contributions, \weblink{\textbf{MeshJS}}{https://meshjs.dev/} [Typescript]
-    \begin{itemize}
-        % \item Refactored the whole transaction metadata structure, and other fixes: \href{https://github.com/MeshJS/mesh/pull/416}{\underline{pull/416}}, \href{https://github.com/MeshJS/mesh/pull/396}{\underline{pull/396}}, \href{https://github.com/MeshJS/mesh/issues/345}{\underline{issues/345}}
-        \item refactored mesh transaction's metadata structure, also fixing a bug leading to lost metadata when building a transaction body \href{https://github.com/MeshJS/mesh/pull/416}{\underline{pull/416}}
-        \item tested and reported a vulnerability with wallet ownership verification functionality \href{https://github.com/MeshJS/mesh/issues/345}{\underline{issues/345}}
-        \item fixed a bug, enabling the use of any account under a hierarchically deterministic wallet key \href{https://github.com/MeshJS/mesh/pull/396}{\underline{pull/396}}
-    \end{itemize}
-
+    \item Open source (\textbf{MeshJS}, TypeScript): refactored transaction metadata handling and fixed metadata-loss bug (\weblink{PR 416}{https://github.com/MeshJS/mesh/pull/416}); fixed HD wallet account bug (\weblink{PR 396}{https://github.com/MeshJS/mesh/pull/396}); reported wallet ownership verification issue (\weblink{Issue 345}{https://github.com/MeshJS/mesh/issues/345}).
     \item Technical articles, available on \textbf{Medium}: \weblink{@dharmveerbharti}{https://medium.com/@dharmveerbharti}
 
     % \item Wrote technical articles on Medium explaining the benefits and implementation of off-chain transactions and server-side message signing in Web3: \href{https://medium.com/coinsbench/off-chain-transactions-on-blockchain-introducing-signature-based-workflow-4bb3b5a7e72f}{\underline{Signature Based Workflow}}, \href{https://medium.com/@dharmveerbharti/server-signed-messages-in-web3-offloading-on-chain-workload-to-off-chain-518bf9bd364b}{\underline{Server Signed Messages}}
