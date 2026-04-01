@@ -6,7 +6,7 @@
     \PassOptionsToClass{\CurrentOption}{article}
 }
 \ProcessOptions\relax
-\LoadClass{article}
+\LoadClass[11pt]{article}
 
 %--------------------------------------------------------------
 % Package Imports
@@ -49,7 +49,7 @@
 \titleformat{\subsection}{%
 \color{subheadings}%
 \customLatoBlack%
-\fontsize{12pt}{12pt}%
+\fontsize{11pt}{11pt}%
 \selectfont%
 \bfseries%
 \uppercase%
@@ -84,7 +84,7 @@
 \newcommand{\runsubsection}[1]{%
 \color{subheadings}%
 \customLatoBlack%
-\fontsize{12pt}{12pt}%
+\fontsize{11pt}{11pt}%
 \selectfont%
 \bfseries%
 #1%
@@ -96,7 +96,7 @@
 \raggedright%
 \scshape%
 \customRalewayMedium%
-\fontsize{11pt}{13pt}%
+\fontsize{11pt}{11pt}%
 \selectfont{#1}%
 \normalfont}
 
@@ -115,7 +115,7 @@
 \raggedright%
 \scshape%
 \customRalewayMedium%
-\fontsize{11pt}{12pt}%
+\fontsize{11pt}{11pt}%
 \selectfont{#1}%
 \normalfont}
 
