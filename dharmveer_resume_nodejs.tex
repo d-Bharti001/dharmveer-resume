@@ -74,9 +74,10 @@
 %--------------------------------------------------------------
 \section{Summary}
 
-Backend engineer focused on reliability and data integrity. \\
-Built and operated backend + data systems in NodeJS, Golang, and Python, with production tooling (Docker, systemd, PM2). \\
-Strong in correctness-first pipelines (validation, deduplication, reconciliation) and designing clear service boundaries.
+Backend engineer focused on reliability and data integrity \\
+Built and owned backend + data systems in NodeJS, Golang, and Python, with production tooling (Docker, systemd, PM2) \\
+Strong in correctness-first pipelines (validation, idempotency, safe retries) and clear service boundaries \\
+Skilled at collaborating across teams and leading feature development from the ground up
 
 \sectionsep
 
@@ -87,13 +88,12 @@ Strong in correctness-first pipelines (validation, deduplication, reconciliation
 
 \resumeHeading{LCX}{Software Development Engineer}{Gurugram, IN}{Aug 2022 - Feb 2026}
 \begin{bullets}
-    \item Owned and maintained the NodeJS (JavaScript) backend of \weblink{Tiamonds}{https://app.tiamonds.com} (now \weblink{TotoFinance}{https://app.totofinance.co}), an NFT marketplace
-    \item Built concurrency-aware APIs and asynchronous pipelines and collaborated with frontend team for REST API integration, also maintaining staging deployments
-    \item Built OP Stack Withdrawals indexer service with failure-resilient retries, idempotent database writes (PostgreSQL) and clear service boundaries
-    \item Implemented server-signed message flows for ERC-721 marketplace operations to reduce on-chain overhead (cut gas costs by approximately 50\%) and enable efficient workflows for new features
+    \item Led the backend development of \weblink{Tiamonds}{https://app.tiamonds.com} (now \weblink{TotoFinance}{https://app.totofinance.co}), an NFT marketplace
+    \item Built concurrency-aware REST APIs and asynchronous pipelines in NodeJS (JavaScript) and collaborated with the frontend and design teams for feature integration and maintained staging deployments
+    \item Built OP Stack Withdrawals indexer service with failure-resilient retries and idempotent database writes (PostgreSQL)
+    \item Implemented server-signed message flows for ERC-721 marketplace operations to reduce on-chain overhead (cut gas costs by approximately 50\%) and to enable efficient workflows for new features
     \item Built a Python automation pipeline (NumPy/Pandas) syncing approximately 80,000 CSV rows into MongoDB for over 20,000 assets with safe retries, and preparing images with Pillow and uploading them to AWS S3
-    \item Conducted research and deployment of Golang services of OP Stack for blockchain layer 2 development
-    \item Designed \weblink{LCX Token 2.0 smart contract}{https://etherscan.io/token/0x8CD41041505885EF0aD3858181D66f17BE8aae7E} (ERC-20, upgradeable, with custom features)
+    \item Conducted research on and deployed Golang services for OP Stack layer 2 blockchain development
 \end{bullets}
 
 \sectionsep
@@ -113,7 +113,7 @@ Strong in correctness-first pipelines (validation, deduplication, reconciliation
 %--------------------------------------------------------------
 \section{Skills}
 \begin{skillList}
-    \textbf{Languages:} JavaScript, TypeScript, Python, Go (Golang), SQL \\
+    \textbf{Languages:} JavaScript, TypeScript, Go (Golang), Python, SQL, Solidity \\
     \textbf{Backend:} NodeJS, REST APIs, gRPC \\
     \textbf{Datastores:} PostgreSQL, MongoDB, MySQL, Redis \\
     \textbf{Infra:} Docker, Nginx, systemd services, PM2, Git, SSH \\
@@ -166,27 +166,27 @@ Strong in correctness-first pipelines (validation, deduplication, reconciliation
 
 \projectHeading{OP Stack Withdrawals Indexer}{https://github.com/d-Bharti001/op-withdrawals-indexer}{Golang, Optimism Stack, Blockchain, PostgreSQL}
 \begin{bullets}
-    \item Two services (\textbf{Indexer} + \textbf{API}) with a shared PostgreSQL database, designed for horizontal scalability.
-    \item Failure-safe indexing with retries/backoff, idempotent SQL writes to prevent duplicates, and graceful shutdown.
-    \item Used interfaces to decouple core logic from chain/DB implementations for testability and maintainability.
-    \item \textbf{Live UI}: \weblink{https://op-sepolia-bridge.d-bharti.dev}{https://op-sepolia-bridge.d-bharti.dev} - built with Lovable and Cursor.
+    \item Two services (\textbf{Indexer} + \textbf{API}) with a shared PostgreSQL database, designed for horizontal scalability
+    \item Failure-safe indexing with retries/backoff, idempotent SQL writes to prevent duplicates, and graceful shutdown
+    \item Used interfaces to decouple core logic from chain/DB implementations for testability and maintainability
+    \item \textbf{Live UI}: \weblink{https://op-sepolia-bridge.d-bharti.dev}{https://op-sepolia-bridge.d-bharti.dev} - built with Lovable and Cursor
 \end{bullets}
 
 \vspace{4pt}
 
 \projectHeading{Tic Tac Toe Bolt}{https://d-bharti001.github.io/tic-tac-toe-bolt/}{TypeScript, ReactJS, Low-level System Design}
 \begin{bullets}
-    \item An extension of the classic Tic-Tac-Toe, with an additional constraint: max 3 active symbols per player; oldest moves are automatically reverted to maintain the limit.
-    \item Demonstrates constraint-based state management logic in \textbf{TypeScript}; playable \weblink{here}{https://d-bharti001.github.io/tic-tac-toe-bolt/}.
+    \item An extension of the classic Tic-Tac-Toe, with an additional constraint: max 3 active symbols per player; oldest moves are automatically reverted to maintain the limit
+    \item Demonstrates constraint-based state management logic in \textbf{TypeScript}; playable \weblink{here}{https://d-bharti001.github.io/tic-tac-toe-bolt/}
 \end{bullets}
 
 \vspace{4pt}
 
 \projectHeading{Payment Microservices App}{https://github.com/d-Bharti001/go-payment-micro}{Golang, Microservices, MySQL, gRPC}
 \begin{bullets}
-    \item Reference microservices-based payment system with clear service boundaries: auth, money movement, email, and ledger.
-    \item Designed service-to-service communication using \textbf{gRPC} and MySQL-backed workflows.
-    \item Deployed on local \textbf{Kubernetes (Minikube)} using manifests and integrated \textbf{Kafka} for asynchronous messaging workflows.
+    \item Reference microservices-based payment system with clear service boundaries: auth, money movement, email, and ledger
+    \item Designed service-to-service communication using \textbf{gRPC} and MySQL-backed workflows
+    \item Deployed on local \textbf{Kubernetes (Minikube)} using manifests and integrated \textbf{Kafka} for asynchronous messaging workflows
 \end{bullets}
 
 % \begin{itemize}
@@ -226,6 +226,11 @@ Strong in correctness-first pipelines (validation, deduplication, reconciliation
 \begin{itemize}
     \item Open source (\textbf{MeshJS}, TypeScript): refactored transaction metadata handling and fixed metadata-loss bug (\weblink{PR 416}{https://github.com/MeshJS/mesh/pull/416}); fixed HD wallet account bug (\weblink{PR 396}{https://github.com/MeshJS/mesh/pull/396}); reported wallet ownership verification issue (\weblink{Issue 345}{https://github.com/MeshJS/mesh/issues/345}).
     \item Technical articles, available on \textbf{Medium}: \weblink{@dharmveerbharti}{https://medium.com/@dharmveerbharti}
+    \item \textbf{Smart Contract Security Audits}
+    \begin{itemize}
+        \item CodeHawks Profile: \weblink{https://profiles.cyfrin.io/u/unitedcoolness26}{https://profiles.cyfrin.io/u/unitedcoolness26}
+        \item 1 High finding, 2 Low findings - \weblink{RAAC Audit}{https://codehawks.cyfrin.io/c/2025-02-raac}
+    \end{itemize}
 
     % \item Wrote technical articles on Medium explaining the benefits and implementation of off-chain transactions and server-side message signing in Web3: \href{https://medium.com/coinsbench/off-chain-transactions-on-blockchain-introducing-signature-based-workflow-4bb3b5a7e72f}{\underline{Signature Based Workflow}}, \href{https://medium.com/@dharmveerbharti/server-signed-messages-in-web3-offloading-on-chain-workload-to-off-chain-518bf9bd364b}{\underline{Server Signed Messages}}
     % \item \textbf{Off-chain transactions on blockchain: introducing signature based workflow}: this article describes how off-chain signature based workflow is utilized to save upfront costs with blockchain applications \href{https://medium.com/coinsbench/off-chain-transactions-on-blockchain-introducing-signature-based-workflow-4bb3b5a7e72f}{\underline{Signature Based Workflow}}

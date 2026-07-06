@@ -74,9 +74,10 @@
 %--------------------------------------------------------------
 \section{Summary}
 
-Backend engineer focused on reliability and data integrity. \\
-Built and operated backend + data systems in Golang, NodeJS, and Python, with production tooling (Docker, systemd, PM2). \\
-Strong in correctness-first pipelines (validation, deduplication, reconciliation) and designing clear service boundaries.
+Backend engineer focused on reliability and data integrity \\
+Built and owned backend + data systems in Golang, NodeJS, and Python, with production tooling (Docker, systemd, PM2) \\
+Strong in correctness-first pipelines (validation, idempotency, safe retries) and clear service boundaries \\
+Skilled at collaborating across teams and leading feature development from the ground up
 
 \sectionsep
 
@@ -87,13 +88,12 @@ Strong in correctness-first pipelines (validation, deduplication, reconciliation
 
 \resumeHeading{LCX}{Software Development Engineer}{Gurugram, IN}{Aug 2022 - Feb 2026}
 \begin{bullets}
-    \item Conducted research and deployment of Golang services of OP Stack for blockchain layer 2 development
-    \item Built Golang based OP Stack Withdrawals indexer service with failure-resilient retries, idempotent database writes (PostgreSQL) and clear service boundaries
-    \item Owned and maintained the backend of \weblink{Tiamonds}{https://app.tiamonds.com} (now \weblink{TotoFinance}{https://app.totofinance.co}), an NFT marketplace, including NodeJS and Python services, staging deployments, and integrations
-    \item Designed correctness-first backend workflows using retries, and idempotent and concurrent-safe operations to maintain system integrity and resiliency
-    \item Built concurrency-aware APIs and collaborated with frontend team for REST API integrations
+    \item Led the backend development of \weblink{Tiamonds}{https://app.tiamonds.com} (now \weblink{TotoFinance}{https://app.totofinance.co}), an NFT marketplace
+    \item Conducted research on and deployed Golang services for OP Stack layer 2 blockchain development
+    \item Built Golang-based OP Stack Withdrawals indexer service with failure-resilient retries and idempotent database writes (PostgreSQL)
+    \item Built concurrency-aware REST APIs and asynchronous pipelines and collaborated with the frontend and design teams for feature integration and maintained staging deployments
+    \item Implemented server-signed message flows for ERC-721 marketplace operations to reduce on-chain overhead (cut gas costs by approximately 50\%) and to enable efficient workflows for new features
     \item Built a Python automation pipeline (NumPy/Pandas) syncing approximately 80,000 CSV rows into MongoDB for over 20,000 assets with safe retries, and preparing images with Pillow and uploading them to AWS S3
-    \item Implemented server-signed message flows for ERC-721 marketplace operations to reduce on-chain overhead (cut gas costs by approximately 50\%) and enable efficient workflows for new features
 \end{bullets}
 
 \sectionsep
@@ -113,7 +113,7 @@ Strong in correctness-first pipelines (validation, deduplication, reconciliation
 %--------------------------------------------------------------
 \section{Skills}
 \begin{skillList}
-    \textbf{Languages:} Go (Golang), Solidity, SQL, JavaScript, TypeScript, Python \\
+    \textbf{Languages:} Go (Golang), JavaScript, TypeScript, Python, SQL, Solidity \\
     \textbf{Backend:} REST APIs, gRPC, NodeJS \\
     \textbf{Datastores:} PostgreSQL, MongoDB, MySQL, Redis \\
     \textbf{Infra:} Docker, Nginx, systemd services, PM2, Git, SSH \\
@@ -166,26 +166,26 @@ Strong in correctness-first pipelines (validation, deduplication, reconciliation
 
 \projectHeading{OP Stack Withdrawals Indexer}{https://github.com/d-Bharti001/op-withdrawals-indexer}{Golang, Optimism Stack, Blockchain, PostgreSQL}
 \begin{bullets}
-    \item Two services (\textbf{Indexer} + \textbf{API}) with a shared PostgreSQL database, designed for horizontal scalability.
-    \item Failure-safe indexing with retries/backoff, idempotent SQL writes to prevent duplicates, and graceful shutdown.
-    \item Used interfaces to decouple core logic from chain/DB implementations for testability and maintainability.
-    \item \textbf{Live UI}: \weblink{https://op-sepolia-bridge.d-bharti.dev}{https://op-sepolia-bridge.d-bharti.dev} - built with Lovable and Cursor.
+    \item Two services (\textbf{Indexer} + \textbf{API}) with a shared PostgreSQL database, designed for horizontal scalability
+    \item Failure-safe indexing with retries/backoff, idempotent SQL writes to prevent duplicates, and graceful shutdown
+    \item Used interfaces to decouple core logic from chain/DB implementations for testability and maintainability
+    \item \textbf{Live UI}: \weblink{https://op-sepolia-bridge.d-bharti.dev}{https://op-sepolia-bridge.d-bharti.dev} - built with Lovable and Cursor
 \end{bullets}
 
 \vspace{4pt}
 
 \projectHeading{Payment Microservices App}{https://github.com/d-Bharti001/go-payment-micro}{Golang, Microservices, MySQL, gRPC}
 \begin{bullets}
-    \item Reference microservices-based payment system with clear service boundaries: auth, money movement, email, and ledger.
-    \item Designed service-to-service communication using \textbf{gRPC} and MySQL-backed workflows.
-    \item Deployed on local \textbf{Kubernetes (Minikube)} using manifests and integrated \textbf{Kafka} for asynchronous messaging workflows.
+    \item Reference microservices-based payment system with clear service boundaries: auth, money movement, email, and ledger
+    \item Designed service-to-service communication using \textbf{gRPC} and MySQL-backed workflows
+    \item Deployed on local \textbf{Kubernetes (Minikube)} using manifests and integrated \textbf{Kafka} for asynchronous messaging workflows
 \end{bullets}
 
 \vspace{4pt}
 
 \projectHeading{Tic Tac Toe Bolt}{https://d-bharti001.github.io/tic-tac-toe-bolt/}{TypeScript, ReactJS}
 \begin{bullets}
-    \item An extension of the classic Tic-Tac-Toe, with an additional constraint: max 3 active symbols per player.
+    \item An extension of the classic Tic-Tac-Toe, with an additional constraint: max 3 active symbols per player
     % \item Playable \weblink{here}{https://d-bharti001.github.io/tic-tac-toe-bolt/}; source code \weblink{here}{https://github.com/d-Bharti001/tic-tac-toe-bolt}
 \end{bullets}
 
