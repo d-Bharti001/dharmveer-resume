@@ -74,9 +74,10 @@
 %--------------------------------------------------------------
 \section{Summary}
 
-Web3 backend developer with 3+ years of experience building and shipping smart contracts, NFT marketplace systems, and on-chain/off-chain integration layers. \\
-Hands-on with EVM smart contracts (Solidity, ERC-20, ERC-721, EIP-712), Cardano NFTs (CIP-25), and OP Stack L2 infrastructure research and testnet deployment. \\
-Strong backend foundation (Golang, NodeJS, Python) with a focus on reliability and data integrity - correctness-first pipelines, idempotency, retries, and graceful failure handling.
+Web3 backend engineer focused on \textbf{reliability}, \textbf{data integrity}, and \textbf{scalability} - with 3+ years of experience building and shipping \textbf{smart contracts}, and on-chain/off-chian \textbf{integration layers} \\
+Built and owned backend + data systems in Golang, NodeJS, and Python, with production tooling \\
+Strong in \textbf{correctness-first pipelines (validation, idempotency, safe retries)} and \textbf{clear service boundaries} \\
+Skilled at \textbf{collaborating across teams} and \textbf{leading feature development from the ground up}
 
 \sectionsep
 
@@ -87,11 +88,13 @@ Strong backend foundation (Golang, NodeJS, Python) with a focus on reliability a
 
 \resumeHeading{LCX}{Software Development Engineer}{Gurugram, IN}{Aug 2022 - Mar 2026}
 \begin{bullets}
-    \item Designed \weblink{LCX Token 2.0 smart contract}{https://etherscan.io/token/0x8CD41041505885EF0aD3858181D66f17BE8aae7E} (ERC-20, upgradeable, with custom features) - live on Ethereum mainnet.
-    \item Conducted research on OP Stack and performed initial testnet deployment of a layer 2 EVM chain, including Golang-based rollup services, smart contract deployments, and on-chain/off-chain component configuration.
-    \item Owned and maintained the backend of \weblink{Tiamonds}{https://app.tiamonds.com} (now \weblink{TotoFinance}{https://app.totofinance.co}), an NFT marketplace - including Ethereum smart contracts, Cardano NFTs (CIP-25), and NodeJS, Python services with correctness-first workflows (validation, retries, concurrency aware operations).
-    \item Implemented server-signed message flows (EIP-712) for ERC-721 marketplace operations to reduce on-chain overhead (cut gas costs by approximately 50\%) and enable efficient workflows for new features.
-    \item Built a Python automation pipeline (NumPy/Pandas) syncing approximately 80,000 CSV rows into MongoDB for over 20,000 assets with safe retries, and preparing images with Pillow and uploading them to AWS S3.
+    \item Led the backend development of \weblink{Tiamonds}{https://app.tiamonds.com} (now \weblink{TotoFinance}{https://app.totofinance.co}), an NFT marketplace
+    \item Designed NFT marketplace smart contracts supporting \textbf{server-signed messages}, and custom tokens (e.g.: \weblink{LCX Token 2.0 smart contract}{https://etherscan.io/token/0x8CD41041505885EF0aD3858181D66f17BE8aae7E} (ERC-20, upgradeable, with custom features) - live on Ethereum mainnet)
+    \item Built Golang-based OP Stack Withdrawals indexer service with \textbf{failure-resilient retries} and \textbf{idempotent database writes}
+    \item Built \textbf{concurrency-aware REST APIs} and \textbf{asynchronous pipelines} and collaborated with the frontend and design teams for feature integration and maintained staging deployments
+    \item Built \textbf{retry-safe blockchain monitoring services} to synchronize and update database according to blockchain events
+    \item Conducted research on and implemented \textbf{server-signed message flows} for ERC-721 marketplace operations to reduce on-chain overhead (\textbf{cut gas costs by approximately 50\%}) and to enable efficient workflows for new features
+    \item Built an \textbf{automation pipeline} syncing approximately 80,000 CSV rows into MongoDB for over 20,000 assets with safe retries
 \end{bullets}
 
 \sectionsep
@@ -112,12 +115,13 @@ Strong backend foundation (Golang, NodeJS, Python) with a focus on reliability a
 \section{Skills}
 \begin{skillList}
     \textbf{Languages:} Go (Golang), Solidity, SQL, JavaScript, TypeScript, Python \\
-    \textbf{Web3:} Ethereum, ERC-20, ERC-721, EIP-712, Cardano (CIP-25), OP Stack, web3.js, ethers.js \\
+    \textbf{Web3:} Ethereum, ERC-20, ERC-721, EIP-712, web3.js, ethers.js \\
     \textbf{Dev Tools:} Foundry, Hardhat, Etherscan \\
     \textbf{Backend:} REST APIs, gRPC, NodeJS \\
     \textbf{Datastores:} PostgreSQL, MongoDB, MySQL, Redis \\
     \textbf{Infra:} Docker, Nginx, systemd services, PM2, Git, SSH \\
-    \textbf{Cloud:} DigitalOcean (Droplets), AWS S3
+    \textbf{Cloud:} DigitalOcean (Droplets), AWS S3 \\
+    \textbf{Fundamentals:} Data Structures and Algorithms, System Design, Low Level Design
 \end{skillList}
 
 % A more concise alternate 
@@ -165,26 +169,26 @@ Strong backend foundation (Golang, NodeJS, Python) with a focus on reliability a
 
 \projectHeading{OP Stack Withdrawals Indexer}{https://github.com/d-Bharti001/op-withdrawals-indexer}{Golang, Optimism Stack, Blockchain, PostgreSQL}
 \begin{bullets}
-    \item Two services (\textbf{Indexer} + \textbf{API}) with a shared PostgreSQL database, designed for horizontal scalability.
-    \item Failure-safe indexing with retries/backoff, idempotent SQL writes to prevent duplicates, and graceful shutdown.
-    \item Used interfaces to decouple core logic from chain/DB implementations for testability and maintainability.
-    \item \textbf{Live UI}: \weblink{https://op-sepolia-bridge.d-bharti.dev}{https://op-sepolia-bridge.d-bharti.dev} - built with Lovable and Cursor.
+    \item Two services (\textbf{Indexer} + \textbf{API}) with a shared PostgreSQL database, designed for horizontal scalability
+    \item Failure-safe indexing with retries/backoff, idempotent SQL writes to prevent duplicates, and graceful shutdown
+    \item Used interfaces to decouple core logic from chain/DB implementations for testability and maintainability
+    \item \textbf{Live UI}: \weblink{https://op-sepolia-bridge.d-bharti.dev}{https://op-sepolia-bridge.d-bharti.dev} - built with Lovable and Cursor
 \end{bullets}
 
 \vspace{4pt}
 
-\projectHeading{Go Payment App}{https://github.com/d-Bharti001/go-payment-micro}{Golang, Microservices, MySQL, gRPC}
+\projectHeading{Payment Microservices App}{https://github.com/d-Bharti001/go-payment-micro}{Microservices, MySQL, gRPC, Golang}
 \begin{bullets}
-    \item Reference microservices-based payment system with clear service boundaries: auth, money movement, email, and ledger.
-    \item Designed service-to-service communication using \textbf{gRPC} and MySQL-backed workflows.
-    \item Deployed on local \textbf{Kubernetes (Minikube)} using manifests and integrated \textbf{Kafka} for asynchronous messaging workflows.
+    \item Reference microservices-based payment system with clear service boundaries: auth, money movement, email, and ledger
+    \item Designed service-to-service communication using \textbf{gRPC} and MySQL-backed workflows
+    \item Deployed on local \textbf{Kubernetes (Minikube)} using manifests and integrated \textbf{Kafka} for asynchronous messaging workflows
 \end{bullets}
 
 \vspace{4pt}
 
 \projectHeading{Tic Tac Toe Bolt}{https://d-bharti001.github.io/tic-tac-toe-bolt/}{TypeScript, ReactJS}
 \begin{bullets}
-    \item An extension of the classic Tic-Tac-Toe, with an additional constraint: max 3 active symbols per player.
+    \item An extension of the classic Tic-Tac-Toe, with an additional constraint: max 3 active symbols per player
 \end{bullets}
 
 % \begin{itemize}
@@ -228,9 +232,9 @@ Strong backend foundation (Golang, NodeJS, Python) with a focus on reliability a
         \item 1 High finding, 2 Low findings - \weblink{RAAC Audit}{https://codehawks.cyfrin.io/c/2025-02-raac}
     \end{itemize}
 
-    \item Open source (\textbf{MeshJS}, TypeScript): refactored transaction metadata handling and fixed metadata-loss bug (\weblink{PR 416}{https://github.com/MeshJS/mesh/pull/416}); fixed HD wallet account bug (\weblink{PR 396}{https://github.com/MeshJS/mesh/pull/396}); reported wallet ownership verification issue (\weblink{Issue 345}{https://github.com/MeshJS/mesh/issues/345}).
+    \item Open source (\textbf{MeshJS}, TypeScript): refactored transaction metadata handling and fixed metadata-loss bug (\weblink{PR 416}{https://github.com/MeshJS/mesh/pull/416}); fixed HD wallet account bug (\weblink{PR 396}{https://github.com/MeshJS/mesh/pull/396}); reported wallet ownership verification issue (\weblink{Issue 345}{https://github.com/MeshJS/mesh/issues/345})
 
-    \item Technical articles on \textbf{Medium} (\weblink{@dharmveerbharti}{https://medium.com/@dharmveerbharti}): \weblink{Off-chain Signature Workflow}{https://medium.com/coinsbench/off-chain-transactions-on-blockchain-introducing-signature-based-workflow-4bb3b5a7e72f}, \weblink{Server-signed Messages in Web3}{https://medium.com/@dharmveerbharti/server-signed-messages-in-web3-offloading-on-chain-workload-to-off-chain-518bf9bd364b}.
+    \item Technical articles on \textbf{Medium} (\weblink{@dharmveerbharti}{https://medium.com/@dharmveerbharti}): \weblink{Off-chain Signature Workflow}{https://medium.com/coinsbench/off-chain-transactions-on-blockchain-introducing-signature-based-workflow-4bb3b5a7e72f}, \weblink{Server-signed Messages in Web3}{https://medium.com/@dharmveerbharti/server-signed-messages-in-web3-offloading-on-chain-workload-to-off-chain-518bf9bd364b}
 
 \end{itemize}
 
