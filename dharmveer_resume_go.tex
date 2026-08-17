@@ -9,6 +9,9 @@
 % Create job position command. Parameters: company, position, location, when
 \newcommand{\resumeHeading}[4]{\runsubsection{\uppercase{#1}}\descript{ | #2}\hfill\location{#3 | #4}\fakeNewLine}
 
+% Create simple heading with no company/location. Parameters: title, when
+\newcommand{\simpleHeading}[2]{\runsubsection{\uppercase{#1}}\hfill\location{#2}\fakeNewLine}
+
 % Create education heading. Parameters: Name, degree, location, when
 \newcommand{\educationHeading}[4]{\runsubsection{#1}\hspace*{\fill}  \location{#3 | #4}\\
 \descript{#2}\fakeNewLine}
@@ -99,6 +102,14 @@ Skilled at \textbf{collaborating across teams} and \textbf{leading feature devel
 
 \sectionsep
 
+\simpleHeading{Career Break}{Mar 2026 - Present}
+\begin{bullets}
+    \item Upskilling to transition into web2-based roles
+    \item Deepening my knowledge in microservice development; experimenting with Claude Code and local LLM (Ollama, Qwen)
+\end{bullets}
+
+\sectionsep
+
 % \resumeHeading{LCX}{Blockchain Intern}{Remote Work, IN}{Feb 2022 - July 2022}
 % \begin{bullets}
 %     % \item Developed a Personal Health Record (PHR) system in \textbf{\href{https://spring.io/}{Spring}} based on the theoretical model outlined in \underlinedLink{https://research.library.mun.ca/11920}{Mitu Kumar's thesis}.
@@ -165,21 +176,20 @@ Skilled at \textbf{collaborating across teams} and \textbf{leading feature devel
 %--------------------------------------------------------------
 \section{Projects}
 
-\projectHeading{OP Stack Withdrawals Indexer}{https://github.com/d-Bharti001/op-withdrawals-indexer}{Optimism Stack, Blockchain, PostgreSQL}
-\begin{bullets}
-    \item Two services (\textbf{Indexer} + \textbf{API}) with a shared PostgreSQL database, designed for horizontal scalability
-    \item Failure-safe indexing with retries/backoff, idempotent SQL writes to prevent duplicates, and graceful shutdown
-    \item Used interfaces to decouple core logic from chain/DB implementations for testability and maintainability
-    \item \textbf{Live UI}: \weblink{https://op-sepolia-bridge.d-bharti.dev}{https://op-sepolia-bridge.d-bharti.dev} - built with Lovable and Cursor
-\end{bullets}
-
-\vspace{4pt}
-
 \projectHeading{Payment Microservices App}{https://github.com/d-Bharti001/go-payment-micro}{Microservices, MySQL, gRPC, Golang}
 \begin{bullets}
     \item Reference microservices-based payment system with clear service boundaries: auth, money movement, email, and ledger
     \item Designed service-to-service communication using \textbf{gRPC} and MySQL-backed workflows
     \item Deployed on local \textbf{Kubernetes (Minikube)} using manifests and integrated \textbf{Kafka} for asynchronous messaging workflows
+\end{bullets}
+
+\vspace{4pt}
+
+\projectHeading{OP Stack Withdrawals Indexer}{https://github.com/d-Bharti001/op-withdrawals-indexer}{Optimism Stack, Blockchain, PostgreSQL}
+\begin{bullets}
+    \item Two services (\textbf{Indexer} + \textbf{API}) with a shared PostgreSQL database, designed for horizontal scalability
+    \item Failure-safe indexing with retries/backoff, idempotent SQL writes to prevent duplicates, and graceful shutdown
+    \item Used interfaces to decouple core logic from chain/DB implementations for testability and maintainability
 \end{bullets}
 
 \vspace{4pt}
