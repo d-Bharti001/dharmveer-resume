@@ -78,7 +78,7 @@
 \section{Summary}
 
 Backend engineer focused on \textbf{reliability}, \textbf{data integrity}, and \textbf{scalability} \\
-Built and owned backend systems, APIs, and data pipelines in Node.js, Golang, and Python, with production tooling \\
+Built and owned backend systems, APIs, and data pipelines in \textbf{Node.js}, \textbf{Golang}, and \textbf{Python}, with production tooling \\
 Strong in \textbf{correctness-first pipelines (validation, idempotency, safe retries)} and \textbf{clear service boundaries} \\
 Skilled at \textbf{collaborating across teams} and \textbf{leading feature development} from the ground up
 
@@ -96,8 +96,8 @@ Skilled at \textbf{collaborating across teams} and \textbf{leading feature devel
     \item Collaborated with the frontend and design teams for feature integration and maintained backend deployments
     \item Researched and implemented \textbf{server-signed message flows} for ERC-721 marketplace operations to reduce on-chain overhead (\textbf{cut gas costs by approximately 50\%}) and to enable efficient workflows for new features
     \item Built an \textbf{automation pipeline} that syncs approximately 80,000 CSV rows into MongoDB for over 20,000 assets with safe retries
+    \item Built a withdrawals indexer service for \textbf{OP Stack Layer 2 blockchains} with \textbf{failure-resilient retries} and \textbf{idempotent database writes}
     \item Built \textbf{retry-safe blockchain monitoring services} to synchronize and update the database based on blockchain events
-    \item Built an OP Stack Withdrawals indexer service with \textbf{failure-resilient retries} and \textbf{idempotent database writes}
     \item Designed NFT marketplace smart contracts supporting \textbf{server-signed messages}, and custom ERC-20 tokens
 \end{bullets}
 
@@ -106,7 +106,7 @@ Skilled at \textbf{collaborating across teams} and \textbf{leading feature devel
 \simpleHeading{Career Break}{Mar 2026 - Present}
 \begin{bullets}
     \item Upskilling to transition into web2-based roles
-    \item Deepening practical knowledge of \textbf{microservices development and scalability}, and experimenting with AI tools like \textbf{Claude Code} and \textbf{local LLMs (Ollama, Qwen)}
+    \item Deepening practical knowledge of \textbf{microservices development and scalability}
 \end{bullets}
 
 \sectionsep
@@ -129,8 +129,9 @@ Skilled at \textbf{collaborating across teams} and \textbf{leading feature devel
     \textbf{Languages:} JavaScript, TypeScript, Go (Golang), Python, SQL, Solidity \\
     \textbf{Backend:} Node.js, Express.js, REST APIs, gRPC, Kafka, Microservices \\
     \textbf{Datastores:} MySQL, MongoDB, PostgreSQL, Redis \\
-    \textbf{DevOps \& Infra:} Git, Linux, Docker, Kubernetes, CI/CD (GitHub Actions), SSH, Nginx, systemd services, PM2 \\
+    \textbf{DevOps \& Infra:} Git, Linux, Docker, Kubernetes, CI/CD (GitHub Actions), SSH, Nginx, systemd, PM2 \\
     \textbf{Cloud:} AWS (EC2, S3), DigitalOcean (Droplets), Cloudflare \\
+    \textbf{AI Tools}: Claude Code, Cursor, Ollama, Qwen \\
     \textbf{Fundamentals:} Data Structures and Algorithms, System Design
 \end{skillList}
 
@@ -179,7 +180,7 @@ Skilled at \textbf{collaborating across teams} and \textbf{leading feature devel
 
 \projectHeading{Payment Microservices App}{https://github.com/d-Bharti001/node-payment-micro}{Node.js, TypeScript, MySQL, gRPC, Kafka, Kubernetes}
 \begin{bullets}
-    \item Payment system built as containerized microservices (API gateway, auth, money movement, ledger, email), deployed on a Kubernetes cluster
+    \item Payment system built as \textbf{containerized microservices} (API gateway, auth, money movement, ledger, email), deployed on a Kubernetes cluster
     \item Safe money transfers under concurrency and retries via \textbf{idempotency keys}, \textbf{atomic conditional balance updates}, \textbf{transactional database updates}, and \textbf{fixed row-lock ordering} to avoid deadlocks
     \item Asynchronous, fault-tolerant event delivery to downstream services using \textbf{Kafka}, the \textbf{transactional outbox pattern}, and an \textbf{idempotent ledger consumer}
     \item Typed service-to-service communication using \textbf{gRPC} (Protobuf)
