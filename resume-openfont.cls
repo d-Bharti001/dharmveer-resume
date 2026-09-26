@@ -157,9 +157,9 @@
 \newenvironment{skillList}{%
 \renewcommand{\arraystretch}{1.4} % Adjust the multiplier value as needed
 \noindent%
-\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}%
+\begin{tabular}{@{}p{\textwidth}@{}}%
 }{%
-\end{tabular*}%
+\end{tabular}%
 \renewcommand{\arraystretch}{1} % Reset to default value after the environment
 }
 
