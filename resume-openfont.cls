@@ -6,7 +6,7 @@
     \PassOptionsToClass{\CurrentOption}{article}
 }
 \ProcessOptions\relax
-\LoadClass[11pt]{article}
+\LoadClass[10pt]{article}
 
 %--------------------------------------------------------------
 % Package Imports
@@ -38,7 +38,7 @@
 \color{headings}% Using comments to allow us to split the command across multiple line
 \scshape%
 \customLatoLight%
-\fontsize{16pt}{24pt}%first number is size, second number is space between lines
+\fontsize{14pt}{21pt}%first number is size, second number is space between lines
 \selectfont%
 \raggedright%
 \uppercase%
@@ -49,7 +49,7 @@
 \titleformat{\subsection}{%
 \color{subheadings}%
 \customLatoBlack%
-\fontsize{11pt}{11pt}%
+\fontsize{10pt}{10pt}%
 \selectfont%
 \bfseries%
 \uppercase%
@@ -84,7 +84,7 @@
 \newcommand{\runsubsection}[1]{%
 \color{subheadings}%
 \customLatoBlack%
-\fontsize{11pt}{11pt}%
+\fontsize{10pt}{10pt}%
 \selectfont%
 \bfseries%
 #1%
@@ -96,7 +96,7 @@
 \raggedright%
 \scshape%
 \customRalewayMedium%
-\fontsize{11pt}{11pt}%
+\fontsize{10pt}{10pt}%
 \selectfont{#1}%
 \normalfont}
 
@@ -105,7 +105,7 @@
 \color{headings}%
 \raggedright%
 \customRalewayMedium%
-\fontsize{11pt}{13pt}%
+\fontsize{10pt}{12pt}%
 \selectfont{#1}%
 \normalfont}
 
@@ -115,7 +115,7 @@
 \raggedright%
 \scshape%
 \customRalewayMedium%
-\fontsize{11pt}{11pt}%
+\fontsize{10pt}{10pt}%
 \selectfont{#1}%
 \normalfont}
 
