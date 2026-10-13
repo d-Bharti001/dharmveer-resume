@@ -181,14 +181,13 @@ Skilled at \textbf{collaborating across teams} and \textbf{leading feature devel
 %--------------------------------------------------------------
 \section{Projects}
 
-\projectHeading{Payment Microservices App}{https://github.com/d-Bharti001/node-payment-micro}{Node.js, TypeScript, MySQL, gRPC, Kafka, Kubernetes}
+\projectHeading{Codebase-aware PR Review Agent}{https://github.com/d-Bharti001/pr-review-agent}{TypeScript, Node.js, LangGraph, BullMQ, Redis, MySQL, Docker}
 \begin{bullets}
-    \item Payment system built as \textbf{containerized microservices} (API gateway, auth, money movement, ledger, email), deployed on a Kubernetes cluster
-    \item Safe money transfers under concurrency and retries via \textbf{idempotency keys}, \textbf{atomic conditional balance updates}, \textbf{transactional database updates}, and \textbf{fixed row-lock ordering} to avoid deadlocks
-    \item Asynchronous, fault-tolerant event delivery to downstream services using \textbf{Kafka}, the \textbf{transactional outbox pattern}, and an \textbf{idempotent ledger consumer}
-    \item Typed service-to-service communication using \textbf{gRPC} (Protobuf)
-    \item Unit and integration tests (\textbf{Vitest}, \textbf{Testcontainers}) covering concurrent transfers, idempotent retries and outbox delivery
-    \item \textbf{CI} with \textbf{GitHub Actions}: per-service test and build pipeline
+    \item \textbf{Event-driven GitHub App} that reviews pull requests with a \textbf{LangGraph multi-agent pipeline} and posts one findings comment per PR, with severity levels and line permalinks
+    \item \textbf{Reliable webhook processing}: signature verification, \textbf{idempotency} by GitHub delivery ID, \textbf{BullMQ} queue with retries, and stale-job detection when a PR changes during a run
+    \item Specialized \textbf{security}, \textbf{quality} and \textbf{tests} agents with codebase tools (read file, search code), selected per diff; large diffs are chunked and agent loops have call and token limits
+    \item \textbf{Swappable LLM provider} (Anthropic, OpenAI, Gemini, OpenRouter, Ollama) with \textbf{LangSmith} tracing and per-step token, latency, and model tracking in \textbf{MySQL}
+    \item \textbf{CI/CD on GitHub Actions}: unit and Testcontainers integration tests, \textbf{approval-gated deployment} to a Linux server with health check and rollback, plus a Docker Compose setup for containerized deployments
 \end{bullets}
 
 \vspace{4pt}
@@ -204,9 +203,14 @@ Skilled at \textbf{collaborating across teams} and \textbf{leading feature devel
 
 \vspace{4pt}
 
-\projectHeading{Tic Tac Toe Bolt}{https://d-bharti001.github.io/tic-tac-toe-bolt/}{TypeScript, React.js}
+\projectHeading{Payment Microservices App}{https://github.com/d-Bharti001/node-payment-micro}{Node.js, TypeScript, MySQL, gRPC, Kafka, Kubernetes}
 \begin{bullets}
-    \item An extension of the classic Tic-Tac-Toe, with an additional constraint: max 3 active symbols per player; oldest moves are automatically reverted to maintain the limit
+    \item Payment system built as \textbf{containerized microservices} (API gateway, auth, money movement, ledger, email), deployed on a Kubernetes cluster
+    \item Safe money transfers under concurrency and retries via \textbf{idempotency keys}, \textbf{atomic conditional balance updates}, \textbf{transactional database updates}, and \textbf{fixed row-lock ordering} to avoid deadlocks
+    \item Asynchronous, fault-tolerant event delivery to downstream services using \textbf{Kafka}, the \textbf{transactional outbox pattern}, and an \textbf{idempotent ledger consumer}
+    \item Typed service-to-service communication using \textbf{gRPC} (Protobuf)
+    \item Unit and integration tests (\textbf{Vitest}, \textbf{Testcontainers}) covering concurrent transfers, idempotent retries and outbox delivery
+    \item \textbf{CI} with \textbf{GitHub Actions}: per-service test and build pipeline
 \end{bullets}
 
 % \begin{itemize}

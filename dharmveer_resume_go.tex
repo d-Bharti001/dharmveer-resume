@@ -176,6 +176,17 @@ Skilled at \textbf{collaborating across teams} and \textbf{leading feature devel
 %--------------------------------------------------------------
 \section{Projects}
 
+\projectHeading{Codebase-aware PR Review Agent}{https://github.com/d-Bharti001/pr-review-agent}{TypeScript, Node.js, LangGraph, BullMQ, Redis, MySQL, Docker}
+\begin{bullets}
+    \item \textbf{Event-driven GitHub App} that reviews pull requests with a \textbf{LangGraph multi-agent pipeline} and posts one findings comment per PR, with severity levels and line permalinks
+    \item \textbf{Reliable webhook processing}: signature verification, \textbf{idempotency} by GitHub delivery ID, \textbf{BullMQ} queue with retries, and stale-job detection when a PR changes during a run
+    \item Specialized \textbf{security}, \textbf{quality} and \textbf{tests} agents with codebase tools (read file, search code), selected per diff; large diffs are chunked and agent loops have call and token limits
+    \item \textbf{Swappable LLM provider} (Anthropic, OpenAI, Gemini, OpenRouter, Ollama) with \textbf{LangSmith} tracing and per-step token, latency, and model tracking in \textbf{MySQL}
+    \item \textbf{CI/CD on GitHub Actions}: unit and Testcontainers integration tests, \textbf{approval-gated deployment} to a Linux server with health check and rollback, plus a Docker Compose setup for containerized deployments
+\end{bullets}
+
+\vspace{4pt}
+
 \projectHeading{Payment Microservices App}{https://github.com/d-Bharti001/go-payment-micro}{Microservices, MySQL, gRPC, Golang}
 \begin{bullets}
     \item Reference microservices-based payment system with clear service boundaries: auth, money movement, email, and ledger
@@ -190,14 +201,6 @@ Skilled at \textbf{collaborating across teams} and \textbf{leading feature devel
     \item Two services (\textbf{Indexer} + \textbf{API}) with a shared PostgreSQL database, designed for horizontal scalability
     \item Failure-safe indexing with retries/backoff, idempotent SQL writes to prevent duplicates, and graceful shutdown
     \item Used interfaces to decouple core logic from chain/DB implementations for testability and maintainability
-\end{bullets}
-
-\vspace{4pt}
-
-\projectHeading{Tic Tac Toe Bolt}{https://d-bharti001.github.io/tic-tac-toe-bolt/}{TypeScript, ReactJS}
-\begin{bullets}
-    \item An extension of the classic Tic-Tac-Toe, with an additional constraint: max 3 active symbols per player
-    % \item Playable \weblink{here}{https://d-bharti001.github.io/tic-tac-toe-bolt/}; source code \weblink{here}{https://github.com/d-Bharti001/tic-tac-toe-bolt}
 \end{bullets}
 
 % \begin{itemize}
