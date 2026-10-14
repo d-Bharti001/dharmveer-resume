@@ -1,0 +1,261 @@
+\documentclass[]{resume-openfont}
+
+\pagestyle{fancy}
+\resetHeaderAndFooter
+
+%--------------------------------------------------------------
+% Convenience command - make it easy to fill template
+
+% Create job position command. Parameters: company, position, location, when
+\newcommand{\resumeHeading}[4]{\runsubsection{\uppercase{#1}}\descript{ | #2}\hfill\location{#3 | #4}\fakeNewLine}
+
+% Create simple heading with no company/location. Parameters: title, when
+\newcommand{\simpleHeading}[2]{\runsubsection{\uppercase{#1}}\hfill\location{#2}\fakeNewLine}
+
+% Create education heading. Parameters: Name, degree, location, when
+\newcommand{\educationHeading}[4]{\runsubsection{#1}\hspace*{\fill}  \location{#3 | #4}\\
+\descript{#2}\fakeNewLine}
+
+\newcommand{\educationHeadingWithGrade}[5]{\runsubsection{#1}\hspace*{\fill}\location{#3 | #4}\\
+\textbf{#2} | \textbf{#5}\fakeNewLine}
+
+% Create project heading. Parameters: Name, link, Tech stack
+\newcommand{\projectHeading}[3]{\Project{#1}{#2}
+\descript{#3}\\}
+
+\newcommand{\projectHeadingWithDate}[4]{\Project{#1}{#2}
+\descript{#3 | #4}\\}
+
+% Parameters: courses
+\newcommand{\courseWork}[1]{\textbf{Coursework:} #1}
+
+% Parameters: courses
+\newcommand{\teacherAssistant}[1]{\textbf{Teacher Assistant (TA):} #1}
+
+% Parameters: web-link
+\newcommand{\weblink}[2]{\href{#2}{\underline{#1}}}
+ 
+%--------------------------------------------------------------
+\begin{document}
+
+%--------------------------------------------------------------
+%     Profile
+%--------------------------------------------------------------
+\newcommand{\yourName}{Dharmveer Bharti}
+% How you want it to show up on the resume
+% \newcommand{\yourWebsite}{website.com}
+% vs how you want it to show up. If it's the same you can just replace "\yourWebsiteLink" with "yourWebsite"
+% \newcommand{\yourWebsiteLink}{https://website.com}
+\newcommand{\yourEmail}{swansi.dharmveer@gmail.com}
+% \newcommand{\yourPhone}{}
+\newcommand{\githubUserName}{d-Bharti001}
+\newcommand{\linkedInUserName}{dharmveer-bharti-55b7231a7}
+
+% An alternate profile section 
+% \alignProfileTable
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%     \ralewayBold{\href{\yourWebsiteLink}{\Large \yourName}} & 
+%     Email : \href{mailto:\yourEmail}{\yourEmail}
+%     \\
+%     \href{https://github.com/\githubUserName}{GitHub://\githubUserName} & 
+%     Mobile : \yourPhone
+%     \\
+%     \href{https://www.linkedin.com/in/\linkedInUserName}{LinkedIn://\linkedInUserName} & Website : \href{\yourWebsiteLink}{\yourWebsite}
+%     \\
+% \end{tabular*}
+
+\begin{center}
+    \huge \scshape \latoRegular{\yourName} \\ \vspace{4pt}
+    \small \href{mailto:\yourEmail}{\underline{\yourEmail}} $|$
+    \weblink{linkedin.com/in/\linkedInUserName}{https://www.linkedin.com/in/\linkedInUserName} $|$
+    \weblink{github.com/\githubUserName}{https://github.com/\githubUserName}
+    % $|$ \href{\yourWebsiteLink}{\underline{\yourWebsite}}
+\end{center}
+
+%--------------------------------------------------------------
+%     Summary
+%--------------------------------------------------------------
+\section{Summary}
+
+Backend engineer focused on \textbf{scalability} and \textbf{data integrity} (validation, idempotency, safe retries) \\ [1pt]
+Built and owned reliable backend systems, APIs, and data pipelines in \textbf{Node.js}, \textbf{Golang}, and \textbf{Python} \\ [1pt]
+Skilled in \textbf{agentic AI systems}: multi-agent orchestration, tool calling, and LLM-integrated workflows
+
+\sectionsep
+
+%--------------------------------------------------------------
+%     Experience
+%--------------------------------------------------------------
+\section{Work Experience}
+
+\resumeHeading{LCX}{Software Development Engineer}{Gurugram, IN}{Aug 2022 - Mar 2026}
+\begin{bullets}
+    \item Led the backend development of \weblink{Tiamonds}{https://app.tiamonds.com} (now \weblink{TotoFinance}{https://app.totofinance.co}), an NFT marketplace
+    \item Built \textbf{concurrency-aware REST APIs} and \textbf{asynchronous pipelines}
+    \item Refactored backend code and optimized database queries; \textbf{cut process memory consumption by ~50\%} (130 MB to 65 MB)
+    \item Researched and implemented \textbf{server-signed message flows} for ERC-721 marketplace operations to reduce on-chain overhead (\textbf{cut gas costs by approximately 50\%}) and to enable efficient workflows for new features
+    \item Built an \textbf{automation pipeline} that syncs approximately 80,000 CSV rows into MongoDB for over 20,000 assets
+    % \item Built a withdrawals indexer service for \textbf{OP Stack Layer 2 blockchains} with \textbf{failure-resilient retries} and \textbf{idempotent database writes}
+    \item Built \textbf{retry-safe blockchain monitoring services} to synchronize and update the database based on blockchain events
+    \item Designed NFT marketplace smart contracts supporting \textbf{server-signed messages}, and custom ERC-20 tokens
+    \item Collaborated with the frontend and design teams for feature integration and maintained backend deployments
+\end{bullets}
+
+\sectionsep
+
+\simpleHeading{Career Break}{Mar 2026 - Present}
+\begin{bullets}
+    \item Upskilling to transition into backend roles at scale
+    \item Deepening practical knowledge of microservices development, LLM orchestration, and AI-integrated workflows
+\end{bullets}
+
+\sectionsep
+
+% \resumeHeading{LCX}{Blockchain Intern}{Remote Work, IN}{Feb 2022 - July 2022}
+% \begin{bullets}
+%     % \item Developed a Personal Health Record (PHR) system in \textbf{\href{https://spring.io/}{Spring}} based on the theoretical model outlined in \underlinedLink{https://research.library.mun.ca/11920}{Mitu Kumar's thesis}.
+%     % \item Applied the \href{https://link.springer.com/chapter/10.1007/978-3-642-10838-9\_23}{mCP-ABE} encryption scheme using the \href{http://gas.dia.unisa.it/projects/jpbc/}{JPBC} library, so patients have fine-grained access control over their health records with the ability to instantly revoke access.
+%     \item Worked on the smart contracts and server-side back-end of \textbf{Tiamonds}: \url{https://tiamonds.com}
+%     \item Upgraded the marketplace smart contract code and created the required APIs to facilitate the flow for re-sale of NFTs with multi-currency support (LCX and ETH)
+% \end{bullets}
+% \sectionsep
+
+
+%--------------------------------------------------------------
+%     Skills
+%--------------------------------------------------------------
+\section{Skills}
+\begin{skillList}
+    \textbf{Languages:} JavaScript, TypeScript, Go (Golang), Python, SQL, Solidity \\
+    \textbf{Backend:} Node.js, Express.js, REST APIs, gRPC, Kafka, BullMQ, Microservices \\
+    \textbf{Datastores:} MySQL, MongoDB, PostgreSQL, Redis \\
+    \textbf{DevOps \& Infra:} Git, Linux, CI/CD (GitHub Actions), AWS (EC2, S3), Docker, Kubernetes, Nginx, systemd, PM2 \\
+    \textbf{LLM \& AI Tools:} Agentic AI, LLM orchestration, LangChain, LangGraph, LangSmith, Local AI (Ollama, Qwen), Claude Code \\
+    \textbf{Web Scraping \& Automation:} Playwright, Crawl4AI \\
+    \textbf{Fundamentals:} Data Structures and Algorithms, System Design
+\end{skillList}
+
+% A more concise alternate 
+% \begin{skillList}
+%     \doubleItem{Languages:}{Java, C++, Python, C\#, PHP, Prolog, Bash, C, Racket}%
+%     {Databases:}{SQL, MongoDB, Neo4j, DynamoDB}
+%     \\
+%     \doubleItem{Web Development:}{JavaScript, TypeScript, React, HTML/CSS}
+%     {Technology:}{Git, AWS, GCP, Azure, Docker, \LaTeX}%
+% \end{skillList}
+
+\sectionsep
+
+
+%--------------------------------------------------------------
+%     Projects
+%--------------------------------------------------------------
+\section{Projects}
+
+\projectHeading{Codebase-aware PR Review Agent}{https://github.com/d-Bharti001/pr-review-agent}{TypeScript, Node.js, LangGraph, BullMQ, Redis, MySQL, Docker}
+\begin{bullets}
+    \item \textbf{Event-driven GitHub App} that reviews pull requests with a \textbf{LangGraph multi-agent pipeline} and posts one findings comment per PR, with severity levels and line permalinks
+    \item \textbf{Reliable webhook processing}: signature verification, \textbf{idempotency} by GitHub delivery ID, \textbf{BullMQ} queue with retries, and stale-job detection when a PR changes during a run
+    \item Specialized \textbf{security}, \textbf{quality} and \textbf{tests} agents with codebase tools (read file, search code), selected per diff; large diffs are chunked and agent loops have call and token limits
+    \item \textbf{Swappable LLM provider} (Anthropic, OpenAI, Gemini, OpenRouter, Ollama) with \textbf{LangSmith} tracing and per-step token, latency, and model tracking in \textbf{MySQL}
+    \item \textbf{CI/CD on GitHub Actions}: unit and Testcontainers integration tests, \textbf{approval-gated deployment} to a Linux server with health check and rollback, plus a Docker Compose setup for containerized deployments
+\end{bullets}
+
+\vspace{4pt}
+
+\projectHeading{Payment Microservices App}{https://github.com/d-Bharti001/node-payment-micro}{TypeScript, Node.js, MySQL, gRPC, Kafka, Kubernetes}
+\begin{bullets}
+    \item Payment system built as \textbf{containerized microservices} (API gateway, auth, money movement, ledger, email), deployed on a Kubernetes cluster
+    \item Safe money transfers under concurrency and retries via \textbf{idempotency keys}, \textbf{atomic conditional balance updates}, \textbf{transactional database updates}, and \textbf{fixed row-lock ordering} to avoid deadlocks
+    \item Asynchronous, fault-tolerant event delivery to downstream services using \textbf{Kafka} with the \textbf{transactional outbox pattern}
+    \item Typed service-to-service communication using \textbf{gRPC} (Protobuf)
+    \item Unit and integration tests (\textbf{Vitest}, \textbf{Testcontainers}) covering concurrent transfers, idempotent retries and outbox delivery
+    \item \textbf{CI} with \textbf{GitHub Actions}: per-service test and build pipeline
+\end{bullets}
+
+\vspace{4pt}
+
+\projectHeading{OP Stack Withdrawals Indexer}{https://github.com/d-Bharti001/op-withdrawals-indexer}{Golang, Optimism Stack, Blockchain, PostgreSQL}
+\begin{bullets}
+    \item Withdrawals indexer / tracker for OP Stack-based Layer 2 blockchains
+    \item Two services (\textbf{Indexer} + \textbf{API}) with a shared PostgreSQL database, designed for horizontal scalability
+    \item \textbf{Failure-safe indexing} with \textbf{retries/backoff}, \textbf{idempotent SQL writes} to prevent duplicates, and graceful shutdown
+    \item Used Go interfaces to decouple core logic from chain and database implementations for cleaner code organization
+\end{bullets}
+
+% \begin{itemize}
+%     \item \textbf{Artista - NFT Marketplace} [Ethereum, Solidity, ERC-721 NFTs, ReactJS]
+%     \begin{itemize}
+%         \item NFT Marketplace for images, backed by Ethereum blockchain and IPFS storage
+%         \item Frontend hosted on Google Firebase: \url{https://artista-marketplace.web.app}
+%     \end{itemize}
+%     \item \textbf{Face-Mask Detector} [AI, Python, OpenCV, Keras, Tensorflow]
+%     \begin{itemize}
+%         \item Real-time face mask detection using camera feed
+%     \item Utilizes a deep learning model for detecting face masks, trained using a Kaggle dataset of images
+%     \end{itemize}
+% \end{itemize}
+
+% \projectHeading{Artista - NFT Marketplace}{https://github.com/d-Bharti001/artista-nft-marketplace}{Ethereum, Solidity, ERC-721, ReactJS}
+% \begin{bullets}
+%     \item NFT Marketplace for images, backed by Ethereum blockchain and IPFS storage
+%     \item Frontend hosted on Google Firebase: \url{https://artista-marketplace.web.app}
+% \end{bullets}
+% \sectionsep
+
+% \projectHeading{Face-mask detector}{https://github.com/d-Bharti001/mask-detector}{AI, Python, OpenCV, Keras, Tensorflow}
+% \begin{bullets}
+%     \item Real-time face mask detection using camera feed
+%     \item Utilizes a deep learning model for detecting face masks, trained using a Kaggle dataset of images
+% \end{bullets}
+
+\sectionsep
+
+
+%--------------------------------------------------------------
+%     Education
+%--------------------------------------------------------------
+\section{Education}
+% Put school first and degree second if your school is reputable
+\educationHeadingWithGrade{B. Tech. Computer Science and Engineering}{BIT Sindri}{JH, IN}{2022}{9.24 CGPA}
+% \sectionsep
+
+% \educationHeadingWithGrade{CBSE XIIth}{Guru Gobind Singh Public School}{JH, IN}{2018}{91.8\%}
+% \sectionsep
+
+% \educationHeadingWithGrade{CBSE Xth}{Saraswati Shishu Vidya Mandir}{JH, IN}{2016}{9.6 CGPA}
+% \sectionsep
+
+% \teacherAssistant{World Wide Web Information Systems Development}
+% \courseWork{Data Structures and Algorithms; Operating Systems;  Computer Security; Software Testing; Advanced Networking; Big Data Analytics}
+% \sectionsep
+
+% Example using bullets and dates 
+% \projectHeadingWithDate{Hogwart\textquotesingle{}s Library Management System}{https://github.com/Aarif123456/hogwartslibrary}{PHP, JavaScript, HTML, CSS, MySQL}{Aug 2019}
+% \begin{bullets}
+    % \item A full-stack library management system, where users can manage books and holds on their accounts. Users can search the library\textquotesingle{}s catalogue, which has every book mentioned in the Harry Potter series. The system distinguishes between 4 users. For examples, librarians who can also check or return books on behalf of users.\\
+% \end{bullets}
+
+\sectionsep
+
+
+%--------------------------------------------------------------
+%     Contributions
+%--------------------------------------------------------------
+\section{Community Contributions}
+
+\begin{itemize}
+    \item Open-source contributions (\textbf{MeshJS}, TypeScript): refactored transaction metadata handling and fixed metadata-loss bug (\weblink{PR 416}{https://github.com/MeshJS/mesh/pull/416}); fixed HD wallet account bug (\weblink{PR 396}{https://github.com/MeshJS/mesh/pull/396}); reported wallet ownership verification issue (\weblink{Issue 345}{https://github.com/MeshJS/mesh/issues/345})
+    \item Technical articles, available on \textbf{Medium}: \weblink{@dharmveerbharti}{https://medium.com/@dharmveerbharti}
+    \item \textbf{Smart Contract Security Audits}
+    \begin{itemize}
+        \item CodeHawks Profile: \weblink{https://profiles.cyfrin.io/u/unitedcoolness26}{https://profiles.cyfrin.io/u/unitedcoolness26}
+        \item 1 High finding, 2 Low findings - \weblink{RAAC Audit}{https://codehawks.cyfrin.io/c/2025-02-raac}
+    \end{itemize}
+
+    % \item Wrote technical articles on Medium explaining the benefits and implementation of off-chain transactions and server-side message signing in Web3: \href{https://medium.com/coinsbench/off-chain-transactions-on-blockchain-introducing-signature-based-workflow-4bb3b5a7e72f}{\underline{Signature Based Workflow}}, \href{https://medium.com/@dharmveerbharti/server-signed-messages-in-web3-offloading-on-chain-workload-to-off-chain-518bf9bd364b}{\underline{Server Signed Messages}}
+    % \item \textbf{Off-chain transactions on blockchain: introducing signature based workflow}: this article describes how off-chain signature based workflow is utilized to save upfront costs with blockchain applications \href{https://medium.com/coinsbench/off-chain-transactions-on-blockchain-introducing-signature-based-workflow-4bb3b5a7e72f}{\underline{Signature Based Workflow}}
+    % \item \textbf{Server-signed Messages in web3: Offloading On-chain Workload to Off-chain}: this article explains how popular blockchain platforms leverage server-signed messages to minimize on-chain workload while providing a robust validation and security layer \href{https://medium.com/@dharmveerbharti/server-signed-messages-in-web3-offloading-on-chain-workload-to-off-chain-518bf9bd364b}{\underline{Server Signed Messages}}
+\end{itemize}
+
+\end{document}
