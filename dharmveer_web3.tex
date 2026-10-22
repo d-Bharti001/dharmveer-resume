@@ -10,7 +10,7 @@
 \newcommand{\resumeHeading}[4]{\runsubsection{\uppercase{#1}}\descript{ | #2}\hfill\location{#3 | #4}\fakeNewLine}
 
 % Create simple heading with no company/location. Parameters: title, when
-\newcommand{\simpleHeading}[2]{\runsubsection{\uppercase{#1}}\hfill\location{#2}\fakeNewLine}
+\newcommand{\simpleHeading}[2]{\descript{#1}\hfill\location{#2}\fakeNewLine}
 
 % Create education heading. Parameters: Name, degree, location, when
 \newcommand{\educationHeading}[4]{\runsubsection{#1}\hspace*{\fill}  \location{#3 | #4}\\
@@ -91,11 +91,11 @@ Skilled in \textbf{agentic AI systems}: multi-agent orchestration, tool calling,
 
 \resumeHeading{LCX}{Software Development Engineer}{Gurugram, IN}{Aug 2022 - Mar 2026}
 \begin{bullets}
-    \item Led the backend development of \weblink{Tiamonds}{https://app.tiamonds.com} (now \weblink{TotoFinance}{https://app.totofinance.co}), an NFT marketplace
-    \item Built \textbf{concurrency-aware REST APIs} and \textbf{asynchronous pipelines}
+    \item Led the backend development of \weblink{Tiamonds}{https://app.tiamonds.com} (now \weblink{TotoFinance}{https://app.totofinance.co}), an NFT marketplace. Owned the backend end to end: scoping requirements, estimating timelines, smart contracts \& API design, implementation, and deployment.
+    \item Built \textbf{concurrency-aware REST APIs} and \textbf{asynchronous pipelines} in Node.js
     \item Refactored backend code and optimized database queries; \textbf{cut process memory consumption by ~50\%} (130 MB to 65 MB)
     \item Researched and implemented \textbf{server-signed message flows} for ERC-721 marketplace operations to reduce on-chain overhead (\textbf{cut gas costs by approximately 50\%}) and to enable efficient workflows for new features
-    \item Built an \textbf{automation pipeline} that syncs approximately 80,000 CSV rows into MongoDB for over 20,000 assets
+    \item Built an \textbf{automation pipeline (Python, Pandas)} that syncs approximately 80,000 CSV rows into MongoDB for over 20,000 assets
     \item Built a withdrawals indexer service for \textbf{OP Stack Layer 2 blockchains} with \textbf{failure-resilient retries} and \textbf{idempotent database writes}
     \item Built \textbf{retry-safe blockchain monitoring services} to synchronize and update the database based on blockchain events
     \item Designed NFT marketplace smart contracts supporting \textbf{server-signed messages}, and custom tokens, including the upgradeable \weblink{LCX Token 2.0}{https://etherscan.io/token/0x8CD41041505885EF0aD3858181D66f17BE8aae7E}, live on Ethereum mainnet
@@ -104,10 +104,11 @@ Skilled in \textbf{agentic AI systems}: multi-agent orchestration, tool calling,
 
 \sectionsep
 
-\simpleHeading{Career Break}{Mar 2026 - Present}
+\simpleHeading{Independent Software Engineer}{Mar 2026 - Present}
 \begin{bullets}
-    \item Upskilling to transition into backend roles at scale
-    \item Deepening practical knowledge of microservices development, LLM orchestration, and AI-integrated workflows
+    \item \textbf{Distributed systems architecture:} implemented microservices isolation patterns, focusing on data consistency under concurrency and retries using fixed row-lock ordering, transactional outbox delivery, and gRPC communication
+    \item Implemented \textbf{asynchronous event processing pipelines} utilizing Kafka and BullMQ/Redis
+    \item \textbf{Agentic workflow orchestration}: built multi-agent pipelines using LangGraph, integrating LLM tool calling and LangSmith tracing
 \end{bullets}
 
 \sectionsep
@@ -155,17 +156,6 @@ Skilled in \textbf{agentic AI systems}: multi-agent orchestration, tool calling,
 %--------------------------------------------------------------
 \section{Projects}
 
-\projectHeading{Codebase-aware PR Review Agent}{https://github.com/d-Bharti001/pr-review-agent}{TypeScript, Node.js, LangGraph, BullMQ, Redis, MySQL, Docker}
-\begin{bullets}
-    \item \textbf{Event-driven GitHub App} that reviews pull requests with a \textbf{LangGraph multi-agent pipeline} and posts one findings comment per PR, with severity levels and line permalinks
-    \item \textbf{Reliable webhook processing}: signature verification, \textbf{idempotency} by GitHub delivery ID, \textbf{BullMQ} queue with retries, and stale-job detection when a PR changes during a run
-    \item Specialized \textbf{security}, \textbf{quality} and \textbf{tests} agents with codebase tools (read file, search code), selected per diff; large diffs are chunked and agent loops have call and token limits
-    \item \textbf{Swappable LLM provider} (Anthropic, OpenAI, Gemini, OpenRouter, Ollama) with \textbf{LangSmith} tracing and per-step token, latency, and model tracking in \textbf{MySQL}
-    \item \textbf{CI/CD on GitHub Actions}: unit and Testcontainers integration tests, \textbf{approval-gated deployment} to a Linux server with health check and rollback, plus a Docker Compose setup for containerized deployments
-\end{bullets}
-
-\vspace{4pt}
-
 \projectHeading{OP Stack Withdrawals Indexer}{https://github.com/d-Bharti001/op-withdrawals-indexer}{Golang, Optimism Stack, Blockchain, PostgreSQL}
 \begin{bullets}
     \item Withdrawals indexer / tracker for OP Stack-based Layer 2 blockchains
@@ -185,6 +175,17 @@ Skilled in \textbf{agentic AI systems}: multi-agent orchestration, tool calling,
     \item Typed service-to-service communication using \textbf{gRPC} (Protobuf)
     \item Unit and integration tests (\textbf{Vitest}, \textbf{Testcontainers}) covering concurrent transfers, idempotent retries and outbox delivery
     \item \textbf{CI} with \textbf{GitHub Actions}: per-service test and build pipeline
+\end{bullets}
+
+\vspace{4pt}
+
+\projectHeading{Codebase-aware PR Review Agent}{https://github.com/d-Bharti001/pr-review-agent}{TypeScript, Node.js, LangGraph, BullMQ, Redis, MySQL, Docker}
+\begin{bullets}
+    \item \textbf{Event-driven GitHub App} that reviews pull requests with a \textbf{LangGraph multi-agent pipeline} and posts one findings comment per PR, with severity levels and line permalinks
+    \item \textbf{Reliable webhook processing}: signature verification, \textbf{idempotency} by GitHub delivery ID, \textbf{BullMQ} queue with retries, and stale-job detection when a PR changes during a run
+    \item Specialized \textbf{security}, \textbf{quality} and \textbf{tests} agents with codebase tools (read file, search code), selected per diff; large diffs are chunked and agent loops have call and token limits
+    \item \textbf{Swappable LLM provider} (Anthropic, OpenAI, Gemini, OpenRouter, Ollama) with \textbf{LangSmith} tracing and per-step token, latency, and model tracking in \textbf{MySQL}
+    \item \textbf{CI/CD on GitHub Actions}: unit and Testcontainers integration tests, \textbf{approval-gated deployment} to a Linux server with health check and rollback, plus a Docker Compose setup for containerized deployments
 \end{bullets}
 
 % \begin{itemize}
