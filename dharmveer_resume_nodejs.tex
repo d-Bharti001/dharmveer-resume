@@ -79,7 +79,7 @@
 
 Backend engineer focused on \textbf{scalability} and \textbf{data integrity} (validation, idempotency, safe retries) \\ [1pt]
 Built and owned reliable backend systems, APIs, and data pipelines in \textbf{Node.js}, \textbf{Golang}, and \textbf{Python} \\ [1pt]
-Skilled in \textbf{agentic AI systems}: multi-agent orchestration, tool calling, and LLM-integrated workflows
+Skilled in \textbf{GenAI} \& \textbf{agentic AI systems}: multi-agent orchestration, tool calling, and LLM-integrated workflows
 
 \sectionsep
 
@@ -95,8 +95,8 @@ Skilled in \textbf{agentic AI systems}: multi-agent orchestration, tool calling,
     \item Refactored backend code and optimized database queries; \textbf{cut process memory consumption by ~50\%} (130 MB to 65 MB)
     \item Researched and implemented \textbf{server-signed message flows} for ERC-721 marketplace operations to reduce on-chain overhead (\textbf{cut gas costs by approximately 50\%}) and to enable efficient workflows for new features
     \item Built an \textbf{ETL pipeline (Python, Pandas)} that syncs approximately 80,000 CSV rows into MongoDB for over 20,000 assets
-    % \item Built a withdrawals indexer service for \textbf{OP Stack Layer 2 blockchains}, handling over 25,000 withdrawal records for OP Sepolia
-    \item Built \textbf{retry-safe blockchain monitoring services} to synchronize and update the database based on blockchain events
+    \item Built a withdrawals indexer service in \textbf{Golang} for \textbf{OP Stack Layer 2 blockchains}
+    \item Built \textbf{retry-safe blockchain monitoring services} to synchronize and update the marketplace database based on blockchain events
     % \item Designed NFT marketplace smart contracts supporting \textbf{server-signed messages}, and custom ERC-20 tokens
     % \item Collaborated with the frontend and design teams for feature integration and maintained backend deployments
 \end{bullets}
@@ -106,8 +106,8 @@ Skilled in \textbf{agentic AI systems}: multi-agent orchestration, tool calling,
 \simpleHeading{Independent Software Engineer}{Mar 2026 - Present}
 \begin{bullets}
     \item \textbf{Distributed systems architecture:} implemented microservices isolation patterns, focusing on data consistency under concurrency and retries using fixed row-lock ordering, transactional outbox delivery, and gRPC communication
-    % \item Implemented \textbf{asynchronous event processing pipelines} utilizing Kafka and BullMQ/Redis
     \item \textbf{Agentic workflow orchestration}: built multi-agent pipelines using LangGraph, integrating LLM tool calling and LangSmith tracing
+    \item Implemented \textbf{asynchronous event processing pipelines} utilizing Kafka and BullMQ/Redis
 \end{bullets}
 
 \sectionsep
@@ -128,11 +128,12 @@ Skilled in \textbf{agentic AI systems}: multi-agent orchestration, tool calling,
 \section{Skills}
 \begin{skillList}
     \textbf{Languages:} JavaScript, TypeScript, Golang, Python, SQL \\
-    \textbf{Core Backend:} Node.js, Express.js, REST APIs, MySQL, MongoDB, PostgreSQL, Redis, gRPC, Kafka, BullMQ, Microservices \\
+    \textbf{Core Backend:} Node.js, Express.js, REST APIs, gRPC \\
+    \textbf{Datastores and Queues:} MySQL, MongoDB, PostgreSQL, Redis, Kafka, BullMQ \\
     \textbf{DevOps \& Infra:} Git, Linux, CI/CD (GitHub Actions), AWS (EC2, S3), Docker, Kubernetes, Nginx, systemd, PM2 \\
-    \textbf{LLM \& AI Tools:} Agentic AI, LLM orchestration, LangChain, LangGraph, LangSmith, Local AI (Ollama, Qwen) \\
+    \textbf{LLM \& AI Tools:} Generative AI, Agentic AI, LLM orchestration, LangChain, LangGraph, LangSmith, Local AI (Ollama, Qwen), Claude Code \\
     % \textbf{Web Scraping \& Automation:} Playwright, Crawl4AI \\
-    \textbf{Fundamentals:} Data Structures and Algorithms, System Design
+    \textbf{Fundamentals:} Data Structures and Algorithms, System Design, Event-Driven Architecture, Microservices
 \end{skillList}
 
 % A more concise alternate 
@@ -160,7 +161,7 @@ Skilled in \textbf{agentic AI systems}: multi-agent orchestration, tool calling,
     \item Unit and integration tests (\textbf{Vitest}, \textbf{Testcontainers}) with \textbf{CI} on \textbf{GitHub Actions} for per-service test and build
 \end{bullets}
 
-\vspace{4pt}
+\vspace{8pt}
 
 \projectHeading{Codebase-aware PR Review Agent}{https://github.com/d-Bharti001/pr-review-agent}{TypeScript, Node.js, LangGraph, BullMQ, Redis, MySQL, Docker}
 \begin{bullets}
@@ -170,7 +171,7 @@ Skilled in \textbf{agentic AI systems}: multi-agent orchestration, tool calling,
     \item \textbf{CI/CD on GitHub Actions}: unit and Testcontainers integration tests, \textbf{approval-gated deployment} to a Linux server with health check and rollback
 \end{bullets}
 
-\vspace{4pt}
+\vspace{8pt}
 
 \projectHeading{OP Stack Withdrawals Indexer}{https://github.com/d-Bharti001/op-withdrawals-indexer}{Golang, Optimism Stack, Blockchain, PostgreSQL}
 \begin{bullets}
@@ -245,11 +246,11 @@ Skilled in \textbf{agentic AI systems}: multi-agent orchestration, tool calling,
 \begin{itemize}
     \item Open-source contributions (\textbf{MeshJS}, TypeScript): refactored transaction metadata handling and fixed metadata-loss bug (\weblink{PR 416}{https://github.com/MeshJS/mesh/pull/416}); fixed HD wallet account bug (\weblink{PR 396}{https://github.com/MeshJS/mesh/pull/396})
     \item Technical articles, available on \textbf{Medium}: \weblink{@dharmveerbharti}{https://medium.com/@dharmveerbharti}
-    % \item \textbf{Smart Contract Security Audits}
-    % \begin{itemize}
-    %     \item CodeHawks Profile: \weblink{https://profiles.cyfrin.io/u/unitedcoolness26}{https://profiles.cyfrin.io/u/unitedcoolness26}
-    %     \item 1 High finding, 2 Low findings - \weblink{RAAC Audit}{https://codehawks.cyfrin.io/c/2025-02-raac}
-    % \end{itemize}
+    \item \textbf{Smart Contract Security Audits}
+    \begin{itemize}
+        \item CodeHawks Profile: \weblink{https://profiles.cyfrin.io/u/unitedcoolness26}{https://profiles.cyfrin.io/u/unitedcoolness26}
+        \item 1 High finding, 2 Low findings - \weblink{RAAC Audit}{https://codehawks.cyfrin.io/c/2025-02-raac}
+    \end{itemize}
 
     % \item Wrote technical articles on Medium explaining the benefits and implementation of off-chain transactions and server-side message signing in Web3: \href{https://medium.com/coinsbench/off-chain-transactions-on-blockchain-introducing-signature-based-workflow-4bb3b5a7e72f}{\underline{Signature Based Workflow}}, \href{https://medium.com/@dharmveerbharti/server-signed-messages-in-web3-offloading-on-chain-workload-to-off-chain-518bf9bd364b}{\underline{Server Signed Messages}}
     % \item \textbf{Off-chain transactions on blockchain: introducing signature based workflow}: this article describes how off-chain signature based workflow is utilized to save upfront costs with blockchain applications \href{https://medium.com/coinsbench/off-chain-transactions-on-blockchain-introducing-signature-based-workflow-4bb3b5a7e72f}{\underline{Signature Based Workflow}}
